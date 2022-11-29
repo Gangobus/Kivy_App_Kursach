@@ -1,4 +1,24 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
-
+#:import adaptive_height kivymd.uix.MDAdaptiveWidget
 <HomePage>:
-    md_bg_color: gch("#FFFFFF")
+    md_bg_color: get_color_from_hex("#FFFFFF")
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        #Appbar
+        MDBoxLayout:
+            padding: '5dp'
+            adaptive_height: True
+
+            MDIconButton:
+                icon: 'school'
+            MDLabel:
+                text: 'KivyApp'
+                halign: 'center'
+                valign: 'center'
+                font_size: 30
+                font_name: 'libs/screens/fonts/Instafont.otf'
+
+            MDIconButton:
+                icon: 'facebook-messenger'

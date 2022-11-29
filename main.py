@@ -1,13 +1,18 @@
 from kivymd.app import MDApp
-from kivy.uix.label import Label
 from kivy.core.window import Window
-from kivy.uix.gridlayout import GridLayout
+from kivy.lang.builder import Builder
+from kivymd.icon_definitions import md_icons
+
+from libs.screens.home_page import HomePage
+
 
 class KivyApp(MDApp):
     def build(self):
         Window.size = [300, 600]
-        label = Label(text = "Kivy")
-        return label
+        self.load_all_kv_files()
+        return HomePage()
+    def load_all_kv_files(self):
+        Builder.load_file('libs/screens/home_page.kv')
 
 
 
