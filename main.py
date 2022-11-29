@@ -1,10 +1,15 @@
-from kivy.app import App
+from kivymd.app import MDApp
 from kivy.uix.label import Label
+from kivy.core.window import Window
 from kivy.uix.gridlayout import GridLayout
 
-class MyApp(App):
+class KivyApp(MDApp):
     def build(self):
-        label = Label(text = "test text")
+        Window.size = [300, 600]
+        label = Label(text = "Kivy")
         return label
-app = MyApp()
-app.run()
+
+
+
+if __name__ == "__main__":
+    KivyApp().run()
