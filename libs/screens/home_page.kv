@@ -2,9 +2,10 @@
 #:import adaptive_height kivymd.uix.MDAdaptiveWidget
 <HomePage>:
     md_bg_color: get_color_from_hex("#FFFFFF")
-
+    orientation:'vertical'
     MDBoxLayout:
         orientation: 'vertical'
+        valign: 'top'
 
         #Appbar
         MDBoxLayout:
@@ -16,9 +17,24 @@
             MDLabel:
                 text: 'KivyApp'
                 halign: 'center'
-                valign: 'center'
-                font_size: 30
+                valign: 'top'
+                font_size: 25
                 font_name: 'libs/screens/fonts/Instafont.otf'
 
             MDIconButton:
                 icon: 'facebook-messenger'
+
+    MDBoxLayout:
+        ScrollView:
+            bar_width: 0
+
+            MDBoxLayout:
+                adaptive_height: True
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    adaptive_height: True
+                    id: timeline
+
+                    #Stories
+                    ScrollView:
