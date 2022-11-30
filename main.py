@@ -12,7 +12,7 @@ from libs.screens.start_page import StartPage
 
 class KivyApp(MDApp):
     def build(self):
-        Window.size = [360, 800]
+        Window.size = [360, 780]
         self.load_all_kv_files()
         return StartPage()
     def load_all_kv_files(self):

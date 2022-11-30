@@ -14,13 +14,31 @@
                 font_size: 24
                 font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
                 color: get_color_from_hex("#004242")
+                #size_hint: None, None
+                #pos_hint: {'center_x': 0.5}
 
-            Button:
-                color: get_color_from_hex("#004242")
+            Widget:
+                canvas:
+                    Color:
+                        rgba: (0/250, 66/255, 66/255, 1)
+                    RoundedRectangle:
+                        radius: [220]
+
+                        #pos: self.pos
+                        #size: self.size
+                text: 'GO'
+                border: 30,30,30,30
+                background_color: get_color_from_hex("#004242")
+                background_color: (0,0,0,0)
+                background_normal:''
                 font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-                size: (218,218)
-                radius: [109,]
-                button_text: 'GO'
-                size_hint: None, None
-                pos_hint: {'center_x': 0.5, 'y': 0.15}
+
+
+
+
+
+
+#<RoundedButton@Button>
+    #size_hint: None, None
+    #pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
