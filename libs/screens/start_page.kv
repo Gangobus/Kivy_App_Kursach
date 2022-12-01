@@ -2,43 +2,44 @@
 #:import adaptive_height kivymd.uix.MDAdaptiveWidget
 #:import utils kivy.utils
 
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+
+
 <StartPage>:
     FloatLayout:
         FitImage:
-            source: 'libs/screens/bgimg.jpg'
+            source: 'libs/screens/rm2.jpg'
         BoxLayout:
             orientation: 'vertical'
 
             Label:
+                size_hint: (1, 0.50)
                 text: 'welcome to kivy app'
                 font_size: 24
                 font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
                 color: get_color_from_hex("#004242")
-                #size_hint: None, None
-                #pos_hint: {'center_x': 0.5}
 
-            Widget:
-                canvas:
-                    Color:
-                        rgba: (0/250, 66/255, 66/255, 1)
-                    RoundedRectangle:
-                        radius: [220]
+                pos_hint: {'center_x': 0.5, 'top': 0.3}
+            FloatLayout:
+                Button:
+                    size_hint: None, None
+                    size: 218, 218
+                    pos_hint:  {'center_x': 0.5, 'y': 0.49}
+                    background_normal:'libs/screens/button1.png'
+                    background_down:'libs/screens/button2.png'
+                    text: 'GO'
 
-                        #pos: self.pos
-                        #size: self.size
-                text: 'GO'
-                border: 30,30,30,30
-                background_color: get_color_from_hex("#004242")
-                background_color: (0,0,0,0)
-                background_normal:''
-                font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-
-
+                    font_size: 60
+                    #color: get_color_from_hex("#83F8FF")
+                    font_color_down:get_color_from_hex("#004242")
+                    font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
+                    on_release:
+                        root.manager.transition = NoTransition()
+                        root.manager.current = 'Lessons'
 
 
 
 
-#<RoundedButton@Button>
-    #size_hint: None, None
-    #pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+
 
