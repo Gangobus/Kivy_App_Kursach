@@ -5,39 +5,48 @@
 <HomePage>:
     FloatLayout:
         FitImage:
-            source: 'libs/screens/rm2.jpg'
+            source: 'libs/screens/green2.jpg'
         BoxLayout:
             orientation: 'vertical'
 
-            FloatLayout:
-                Button:
-                    size_hint: None, None
-                    size: 218, 218
-                    pos_hint:  {'center_x': 0.5, 'center_y': 0.4}
-                    background_normal:'libs/screens/button1.png'
-                    background_down:'libs/screens/button2.png'
-                    text: 'LESSONS'
-                    font_size: 30
-                    font: get_color_from_hex("#83F8FF")
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.3
+                    pos_hint:  { 'y': 1}
+                    text: 'Lessons'
+                    font_size: 24
                     font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-                    on_release:
-                        root.manager.transition.direction = 'right'
-                        root.manager.current = 'GO'
-            FloatLayout:
-                Button:
+                    color: get_color_from_hex("#004242")
 
+                Button:
                     size_hint: None, None
-                    size: 218,218
-                    pos_hint:  {'center_x': 0.5, 'center_y': 0.6}
-                    background_normal:'libs/screens/button1.png'
-                    background_down:'libs/screens/button2.png'
-                    text: 'TESTS'
-                    font_size: 30
-                    font: get_color_from_hex("#83F8FF")
-                    font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
+                    size: 300, 141
+                    pos_hint:  {'center_x': 0.5, 'top': 0}
+                    background_normal:'libs/screens/buttons2.png'
+                    background_down:'libs/screens/buttons2.png'
                     on_release:
                         root.manager.transition.direction = 'right'
-                        root.manager.current = 'GO'
+                        root.manager.current = 'Lessons'
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    size_hint: 1, 0.3
+                    pos_hint:  { 'y': 1}
+                    text: 'Tests'
+                    font_size: 24
+                    font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
+                    color: get_color_from_hex("#004242")
+
+                Button:
+                    size_hint: None, None
+                    size: 300, 141
+                    pos_hint:  {'center_x': 0.5, 'top': 0}
+                    background_normal:'libs/screens/buttons2.png'
+                    background_down:'libs/screens/buttons2.png'
+                    on_release:
+                        root.manager.transition.direction = 'right'
+                        root.manager.current = 'Tests'
 
 
 

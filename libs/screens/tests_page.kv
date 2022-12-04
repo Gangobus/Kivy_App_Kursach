@@ -4,7 +4,13 @@
 
 #: import NoTransition kivy.uix.screenmanager.NoTransition
 
-<LessonsPage>:
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import adaptive_height kivymd.uix.MDAdaptiveWidget
+#:import utils kivy.utils
+
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+
+<TestsPage>:
     MDBoxLayout:
         orientation: 'vertical'
         MDBoxLayout:
@@ -14,7 +20,7 @@
                 FitImage:
                     source: 'libs/screens/green2.jpg'
                 Label:
-                    text: "It's Lessons Page"
+                    text: "It's Tests Page"
                     font_size: 26
                     font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
                     color: get_color_from_hex("#004242")
@@ -31,10 +37,10 @@
         Label:
 
         MDIconButton:
-            icon: 'format-list-text'
+            icon: 'school'
             on_release:
                 root.manager.transition = NoTransition()
-                root.manager.current = 'Tests'
+                root.manager.current = 'Lessons'
 
         MDIconButton:
             icon: 'home'
@@ -48,3 +54,5 @@
                 root.manager.transition = NoTransition()
                 root.manager.current = 'Go'
         Label:
+
+

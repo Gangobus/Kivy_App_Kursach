@@ -8,12 +8,12 @@
 <StartPage>:
     FloatLayout:
         FitImage:
-            source: 'libs/screens/rm2.jpg'
+            source: 'libs/screens/green2.jpg'
         BoxLayout:
             orientation: 'vertical'
 
             Label:
-                size_hint: (1, 0.50)
+                size_hint: (1, 1)
                 text: 'welcome to kivy app'
                 font_size: 24
                 font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
@@ -23,11 +23,10 @@
             FloatLayout:
                 Button:
                     size_hint: None, None
-                    size: 218, 218
+                    size: 252, 252
                     pos_hint:  {'center_x': 0.5, 'y': 0.49}
-                    background_normal:'libs/screens/button1.png'
-                    background_down:'libs/screens/button2.png'
-                    text: 'GO'
+                    background_normal:'libs/screens/kiwi2.png'
+                    background_down:'libs/screens/kiwi2.png'
 
                     font_size: 60
                     #color: get_color_from_hex("#83F8FF")
