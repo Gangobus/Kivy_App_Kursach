@@ -31,6 +31,12 @@
         Label:
 
         MDIconButton:
+            icon: 'school'
+            on_release:
+                root.manager.transition = NoTransition()
+                root.manager.current = 'Lessons'
+
+        MDIconButton:
             icon: 'format-list-text'
             on_release:
                 root.manager.transition = NoTransition()
@@ -46,5 +52,12 @@
             icon: 'controller'
             on_release:
                 root.manager.transition = NoTransition()
-                root.manager.current = 'Go'
+                root.manager.current = 'Game'
+
+        MDIconButton:
+            icon: 'youtube-subscription'
+            on_release:
+                root.manager.transition = NoTransition()
+                root.manager.current = 'Videos'
         Label:
+

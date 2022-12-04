@@ -4,13 +4,7 @@
 
 #: import NoTransition kivy.uix.screenmanager.NoTransition
 
-#:import get_color_from_hex kivy.utils.get_color_from_hex
-#:import adaptive_height kivymd.uix.MDAdaptiveWidget
-#:import utils kivy.utils
-
-#: import NoTransition kivy.uix.screenmanager.NoTransition
-
-<TestsPage>:
+<VideosPage>:
     MDBoxLayout:
         orientation: 'vertical'
         MDBoxLayout:
@@ -20,7 +14,7 @@
                 FitImage:
                     source: 'libs/screens/green2.jpg'
                 Label:
-                    text: "It's Tests Page"
+                    text: "It's Videos Page"
                     font_size: 26
                     font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
                     color: get_color_from_hex("#004242")
@@ -67,6 +61,4 @@
                 root.manager.current = 'Videos'
 
         Label:
-
-
 
