@@ -2,25 +2,52 @@
 #:import adaptive_height kivymd.uix.MDAdaptiveWidget
 #:import utils kivy.utils
 #: import NoTransition kivy.uix.screenmanager.NoTransition
+#:import Vector kivy.vector.Vector
 
 <LessonsPage>:
     MDBoxLayout:
         orientation: 'vertical'
+#        MDBoxLayout:
+#            orientation: 'vertical'
+#            FloatLayout:
+#                pos_hint: {'center_x': 0.5, 'top': 0.5}
+#                FitImage:
+#                    source: 'libs/screens/green2.jpg'
+##                Label:
+##                    text: "It's Lessons Page"
+##                    font_size: 26
+##                    font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
+##                    color: get_color_from_hex("#004242")
+    ScrollView:
         MDBoxLayout:
+            spacing: 20
+            padding:20
             orientation: 'vertical'
-            FloatLayout:
-                pos_hint: {'center_x': 0.5, 'top': 0.5}
-                FitImage:
-                    source: 'libs/screens/green2.jpg'
-                Label:
-                    text: "It's Lessons Page"
-                    font_size: 26
+            MDCard:
+                #pos_hint: {'center_x': .5,'center_y': .5}
+                md_bg_color:get_color_from_hex("#E7FCB8")
+                size: 250, 250
+                elevation: 2
+                MDLabel:
+                    text:"First lesson"
+                    font_size: 24
+                    font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
+                    color: get_color_from_hex("#004242")
+
+            MDCard:
+                #pos_hint: {'center_x': .5,'center_y': .5}
+                md_bg_color:get_color_from_hex("#E7FCB8")
+                size: 250, 250
+                elevation: 2
+                MDLabel:
+                    pos_hint: {'center_x': .5,'center_y': .5}
+                    text:"Second lesson"
+                    font_size: 24
                     font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
                     color: get_color_from_hex("#004242")
 
 
-
-    MDBoxLayout:
+    MDBoxLayout:#buttom bar
         md_bg_color: get_color_from_hex("#E7FCB8")
         adaptive_height: True
         spacing: 30

@@ -6,11 +6,21 @@ from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from libs.components.post_card import PostCard
 from kivy.properties import StringProperty
+from kivymd.uix.menu import MDDropdownMenu
+from kivymd.uix.card import MDCard
 
 
 
 class StartPage(Screen):
     pass
+
+
+class Plate(MDCard):
+    _video_title = StringProperty("#01 Introduction to Kivymd & Toolbar")
+    _channel_name = StringProperty("Sk Sahil - 79K views - 1 day ago")
+
+    def on_kv_post(self, obj):
+        pass
 
 class LessonsPage(Screen):
     pass
