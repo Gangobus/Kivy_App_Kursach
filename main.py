@@ -1,9 +1,12 @@
+import json
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.app import MDApp
-from kivymd.uix.boxlayout import MDBoxLayout#
-from kivymd.uix.screen import MDScreen#
+from kivymd.uix.boxlayout import MDBoxLayout
+from libs.components.post_card import PostCard
+from kivy.properties import StringProperty
+
 
 
 class StartPage(Screen):
@@ -11,6 +14,22 @@ class StartPage(Screen):
 
 class LessonsPage(Screen):
     pass
+    # def on_enter(self):
+    #     self.list_lessons()
+    # def list_lessons(self):
+    #     with open('data/lessons.json') as f_obj:
+    #         data = json.load(f_obj)
+    #         for lessonnumber in data:
+    #             self.ids.timeline.add_widget(PostCard(
+    #                 postnumber=postnumber,
+    #                 avatar=data[username]['avatar'],
+    #                 post=data[username]['post'],
+    #                 caption=data[username]['caption'],
+    #                 likes=data[username]['likes'],
+    #                 comments=data[username]['comments'],
+    #                 posted_ago=data[username]['posted_ago'],
+    #             ))
+
 
 class TestsPage(Screen):
     pass
