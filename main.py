@@ -2,6 +2,8 @@ from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.app import MDApp
+from kivymd.uix.boxlayout import MDBoxLayout#
+from kivymd.uix.screen import MDScreen#
 
 
 class StartPage(Screen):
@@ -17,6 +19,9 @@ class GamePage(Screen):
     pass
 
 class VideosPage(Screen):
+    pass
+
+class BottomNav(MDBoxLayout):
     pass
 
 class MyApp(MDApp):
