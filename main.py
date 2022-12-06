@@ -4,11 +4,10 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
-from libs.components.post_card import PostCard
 from kivy.properties import StringProperty
-from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.card import MDCard
-
+from kivy.uix.scrollview import ScrollView
+import sqlite3
 
 
 class StartPage(Screen):
@@ -23,22 +22,33 @@ class Plate(MDCard):
         pass
 
 class LessonsPage(Screen):
-    pass
-    # def on_enter(self):
-    #     self.list_lessons()
-    # def list_lessons(self):
-    #     with open('data/lessons.json') as f_obj:
-    #         data = json.load(f_obj)
-    #         for lessonnumber in data:
-    #             self.ids.timeline.add_widget(PostCard(
-    #                 postnumber=postnumber,
-    #                 avatar=data[username]['avatar'],
-    #                 post=data[username]['post'],
-    #                 caption=data[username]['caption'],
-    #                 likes=data[username]['likes'],
-    #                 comments=data[username]['comments'],
-    #                 posted_ago=data[username]['posted_ago'],
-    #             ))
+
+    lessons_plik = open(r"data.txt","r")
+    fileoutput = StringProperty(lessons_plik.read())
+    lessons_plik.close()
+
+    def show_records(self):
+        # Create Database Or Connect To One
+        conn = sqlite3.connect('first_db.db')
+
+        # Create A Cursor
+        c = conn.cursor()
+
+        # Grab records from database
+        c.execute("SELECT * FROM customers")
+        records = c.fetchall()
+
+        word = ''
+        # Loop thru records
+        for record in records:
+            word = f'{word}\n{record[0]}'
+            self.root.ids.word_label.text = f'{word}'
+
+        # Commit our changes
+        conn.commit()
+
+        # Close our connection
+        conn.close()
 
 
 class TestsPage(Screen):
