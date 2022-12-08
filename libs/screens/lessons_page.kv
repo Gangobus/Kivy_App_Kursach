@@ -4,74 +4,40 @@
 #: import NoTransition kivy.uix.screenmanager.NoTransition
 #:import Vector kivy.vector.Vector
 
+<PostCard>:
+    MDCard:
+        pos_hint: {'center_x': .5}
+        md_bg_color:get_color_from_hex("#E7FCB8")
+        size_hint_y: None
+        height: 200
+        MDBoxLayout:
+            orientation: 'vertical'
+            MDLabel:
+                #id: l_number
+                text: f'{root.titlel}'
+                #text: f'[b][size=14]{root.namelesson}[/size][/b]'
+                font_size: 10
+                font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
+                color: get_color_from_hex("#004242")#
+            MDLabel:
+                text: f'{root.textlesson}'
+                font_size: 10
+                font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
+                color: get_color_from_hex("#004242")
+
 <LessonsPage>:
     MDBoxLayout:
         ScrollView:
             do_scroll_x: False
             do_scroll_y: True
             MDBoxLayout:
-                spacing: 20
+                spacing: 210
                 padding:20
                 orientation: 'vertical'
                 adaptive_height: True
                 bar_width: 0
+                id: timeline
 
-                MDCard:
-                    pos_hint: {'center_x': .5}
-                    md_bg_color:get_color_from_hex("#E7FCB8")
-                    size_hint_y: None
-                    #size_hint_x: 0.95
-                    height: 250
-                    MDLabel:
-                        pos_hint: {'center_x': .5,'center_y': .5}
-                        text: root.fileoutput
-                        font_size: 24
-                        font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-                        color: get_color_from_hex("#004242")
-
-                MDCard:
-                    pos_hint: {'center_x': .5}
-                    md_bg_color:get_color_from_hex("#E7FCB8")
-                    size_hint_y: None
-                    height: 250
-                    MDLabel:
-                        pos_hint: {'center_x': .5,'center_y': .5}
-                        text:"Second lesson"
-                        font_size: 24
-                        font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-                        color: get_color_from_hex("#004242")
-
-                MDCard:
-                    pos_hint: {'center_x': .5}
-                    md_bg_color:get_color_from_hex("#E7FCB8")
-                    size_hint_y: None
-                    height: 250
-                    MDLabel:
-                        text:"3 lesson"
-                        font_size: 24
-                        font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-                        color: get_color_from_hex("#004242")
-
-                MDCard:
-                    pos_hint: {'center_x': .5}
-                    md_bg_color:get_color_from_hex("#E7FCB8")
-                    size_hint_y: None
-                    height: 250
-                    MDLabel:
-                        text:"4 lesson"
-                        font_size: 24
-                        font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-                        color: get_color_from_hex("#004242")
-                MDCard:
-                    pos_hint: {'center_x': .5}
-                    md_bg_color:get_color_from_hex("#E7FCB8")
-                    size_hint_y: None
-                    height: 250
-                    MDLabel:
-                        text:"4 lesson"
-                        font_size: 24
-                        font_name: 'libs/screens/fonts/Bungee-Regular.ttf'
-                        color: get_color_from_hex("#004242")
 
     MDBoxLayout:#buttom bar
         md_bg_color: get_color_from_hex("#E7FCB8")
